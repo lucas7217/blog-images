@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="520" viewBox="0 0 1400 520">
+  <defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#eef5ff"/><stop offset="1" stop-color="#f5fffb"/></linearGradient><filter id="s"><feDropShadow dx="0" dy="8" stdDeviation="10" flood-opacity=".12"/></filter></defs>
+  <rect width="1400" height="520" fill="url(#bg)"/><text x="70" y="76" font-family="Microsoft YaHei" font-size="34" font-weight="700" fill="#172033">Spring AI Alibaba 第一次调用链</text>
+  <text x="70" y="112" font-family="Microsoft YaHei" font-size="18" fill="#64748b">HTTP 请求如何抵达阿里云百炼中的 Qwen 模型</text>
+  <g font-family="Microsoft YaHei" text-anchor="middle" filter="url(#s)">
+    <g><rect x="60" y="205" rx="18" width="190" height="112" fill="#fff" stroke="#93c5fd"/><text x="155" y="250" font-size="22" font-weight="700" fill="#1d4ed8">客户端</text><text x="155" y="282" font-size="16" fill="#64748b">JSON / HTTP</text></g>
+    <g><rect x="290" y="205" rx="18" width="190" height="112" fill="#fff" stroke="#93c5fd"/><text x="385" y="250" font-size="22" font-weight="700" fill="#1d4ed8">Controller</text><text x="385" y="282" font-size="16" fill="#64748b">校验请求</text></g>
+    <g><rect x="520" y="205" rx="18" width="190" height="112" fill="#fff" stroke="#86efac"/><text x="615" y="250" font-size="22" font-weight="700" fill="#15803d">Service</text><text x="615" y="282" font-size="16" fill="#64748b">组织业务调用</text></g>
+    <g><rect x="750" y="205" rx="18" width="190" height="112" fill="#fff" stroke="#c4b5fd"/><text x="845" y="250" font-size="22" font-weight="700" fill="#6d28d9">ChatClient</text><text x="845" y="282" font-size="16" fill="#64748b">Spring AI 统一 API</text></g>
+    <g><rect x="980" y="205" rx="18" width="190" height="112" fill="#fff" stroke="#fdba74"/><text x="1075" y="250" font-size="22" font-weight="700" fill="#c2410c">DashScope</text><text x="1075" y="282" font-size="16" fill="#64748b">百炼模型服务</text></g>
+    <g><rect x="1210" y="205" rx="18" width="140" height="112" fill="#172033"/><text x="1280" y="250" font-size="22" font-weight="700" fill="#fff">Qwen</text><text x="1280" y="282" font-size="16" fill="#cbd5e1">qwen-plus</text></g>
+  </g>
+  <g stroke="#64748b" stroke-width="3" fill="none"><path d="M250 261H286"/><path d="M480 261H516"/><path d="M710 261H746"/><path d="M940 261H976"/><path d="M1170 261H1206"/></g>
+  <g fill="#64748b"><path d="M286 261l-10-7v14z"/><path d="M516 261l-10-7v14z"/><path d="M746 261l-10-7v14z"/><path d="M976 261l-10-7v14z"/><path d="M1206 261l-10-7v14z"/></g>
+  <text x="700" y="408" text-anchor="middle" font-family="Microsoft YaHei" font-size="18" fill="#475569">Starter 完成模型自动配置，业务代码只依赖 ChatClient</text>
+</svg>
