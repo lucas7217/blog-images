@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="760" viewBox="0 0 1600 760">
+  <rect width="1600" height="760" fill="#f8fafc"/>
+  <style>.title{font:700 34px 'Microsoft YaHei','Noto Sans SC',sans-serif;fill:#0f172a}.sub{font:400 18px 'Microsoft YaHei','Noto Sans SC',sans-serif;fill:#64748b}.h{font:700 20px 'Microsoft YaHei','Noto Sans SC',sans-serif;fill:#0f172a}.b{font:400 16px 'Microsoft YaHei','Noto Sans SC',sans-serif;fill:#475569}.tag{font:600 14px 'Microsoft YaHei','Noto Sans SC',sans-serif;fill:#1d4ed8}.box{fill:#fff;stroke:#cbd5e1;stroke-width:2}.blue{fill:#eff6ff;stroke:#60a5fa;stroke-width:2.5}.green{fill:#ecfdf5;stroke:#34d399;stroke-width:2.5}.arr{stroke:#64748b;stroke-width:3;fill:none;marker-end:url(#a)}.back{stroke:#10b981;stroke-width:3;fill:none;marker-end:url(#g)}</style>
+  <defs><marker id="a" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0 0L0 6L9 3Z" fill="#64748b"/></marker><marker id="g" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0 0L0 6L9 3Z" fill="#10b981"/></marker></defs>
+  <text x="800" y="58" text-anchor="middle" class="title">nextCall()：同步 Advisor 责任链如何推进</text>
+  <text x="800" y="94" text-anchor="middle" class="sub">每次 pop 一个 Advisor；中间节点主动 nextCall，模型节点返回最终响应</text>
+  <rect x="60" y="205" width="280" height="160" rx="18" class="blue"/><text x="200" y="250" text-anchor="middle" class="h">DefaultCallResponseSpec</text><text x="200" y="290" text-anchor="middle" class="b">content() / chatResponse()</text><text x="200" y="328" text-anchor="middle" class="tag">首次 nextCall()</text>
+  <rect x="410" y="205" width="280" height="160" rx="18" class="box"/><text x="550" y="250" text-anchor="middle" class="h">pop Advisor A</text><text x="550" y="290" text-anchor="middle" class="b">adviseCall(request, chain)</text><text x="550" y="328" text-anchor="middle" class="tag">before / after</text>
+  <rect x="760" y="205" width="280" height="160" rx="18" class="box"/><text x="900" y="250" text-anchor="middle" class="h">pop Advisor B</text><text x="900" y="290" text-anchor="middle" class="b">继续 chain.nextCall()</text><text x="900" y="328" text-anchor="middle" class="tag">递归推进</text>
+  <rect x="1110" y="205" width="340" height="160" rx="18" class="green"/><text x="1280" y="250" text-anchor="middle" class="h">ChatModelCallAdvisor</text><text x="1280" y="290" text-anchor="middle" class="b">调用 ChatModel 并返回</text><text x="1280" y="328" text-anchor="middle" class="tag">责任链终点</text>
+  <path d="M340 285H400" class="arr"/><path d="M690 285H750" class="arr"/><path d="M1040 285H1100" class="arr"/>
+  <path d="M1280 375V470H900V375" class="back"/><path d="M900 500H550V375" class="back"/><path d="M550 530H200V375" class="back"/>
+  <text x="1080" y="458" text-anchor="middle" class="tag">ChatClientResponse 逐层返回</text>
+  <rect x="245" y="595" width="1110" height="105" rx="16" fill="#e2e8f0"/><text x="800" y="637" text-anchor="middle" class="h">关键约束</text><text x="800" y="674" text-anchor="middle" class="b">中间 Advisor 必须调用 chain.nextCall() 才会继续；不调用则表示短路并自行返回响应</text>
+</svg>
