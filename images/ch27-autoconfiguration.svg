@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="760" viewBox="0 0 1600 760">
+  <rect width="1600" height="760" fill="#f8fafc"/>
+  <style>
+    .title{font:700 34px 'Microsoft YaHei','Noto Sans SC',sans-serif;fill:#0f172a}
+    .sub{font:400 18px 'Microsoft YaHei','Noto Sans SC',sans-serif;fill:#64748b}
+    .head{font:700 21px 'Microsoft YaHei','Noto Sans SC',sans-serif;fill:#0f172a}
+    .body{font:400 17px 'Microsoft YaHei','Noto Sans SC',sans-serif;fill:#475569}
+    .tag{font:600 15px 'Microsoft YaHei','Noto Sans SC',sans-serif;fill:#1d4ed8}
+    .box{fill:#fff;stroke:#cbd5e1;stroke-width:2}
+    .accent{fill:#eff6ff;stroke:#60a5fa;stroke-width:2.5}
+    .green{fill:#ecfdf5;stroke:#34d399;stroke-width:2.5}
+    .arrow{stroke:#64748b;stroke-width:3;fill:none;marker-end:url(#a)}
+  </style>
+  <defs><marker id="a" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#64748b"/></marker></defs>
+  <text x="800" y="60" text-anchor="middle" class="title">Spring AI Alibaba 自动配置：从依赖到可注入 Bean</text>
+  <text x="800" y="96" text-anchor="middle" class="sub">配置发现、条件判断、属性绑定与 Bean 创建的完整链路</text>
+
+  <rect x="70" y="165" width="260" height="150" rx="18" class="box"/>
+  <text x="200" y="208" text-anchor="middle" class="head">Starter / JAR</text>
+  <text x="200" y="244" text-anchor="middle" class="body">引入自动配置模块</text>
+  <text x="200" y="280" text-anchor="middle" class="tag">classpath</text>
+
+  <rect x="400" y="165" width="310" height="150" rx="18" class="box"/>
+  <text x="555" y="208" text-anchor="middle" class="head">AutoConfiguration.imports</text>
+  <text x="555" y="244" text-anchor="middle" class="body">发现候选自动配置类</text>
+  <text x="555" y="280" text-anchor="middle" class="tag">Spring Boot</text>
+
+  <rect x="780" y="165" width="330" height="150" rx="18" class="accent"/>
+  <text x="945" y="208" text-anchor="middle" class="head">条件评估</text>
+  <text x="945" y="244" text-anchor="middle" class="body">类、模型、开关是否满足</text>
+  <text x="945" y="280" text-anchor="middle" class="tag">@Conditional...</text>
+
+  <rect x="1180" y="165" width="350" height="150" rx="18" class="accent"/>
+  <text x="1355" y="208" text-anchor="middle" class="head">Properties 绑定</text>
+  <text x="1355" y="244" text-anchor="middle" class="body">API Key、模型与默认参数</text>
+  <text x="1355" y="280" text-anchor="middle" class="tag">@EnableConfigurationProperties</text>
+
+  <path d="M330 240 H390" class="arrow"/><path d="M710 240 H770" class="arrow"/><path d="M1110 240 H1170" class="arrow"/>
+
+  <rect x="155" y="430" width="390" height="170" rx="18" class="green"/>
+  <text x="350" y="474" text-anchor="middle" class="head">DashScopeChatModel</text>
+  <text x="350" y="512" text-anchor="middle" class="body">API Client + Retry + Tool Calling</text>
+  <text x="350" y="548" text-anchor="middle" class="tag">@ConditionalOnMissingBean</text>
+
+  <rect x="610" y="430" width="380" height="170" rx="18" class="box"/>
+  <text x="800" y="474" text-anchor="middle" class="head">ChatClientAutoConfiguration</text>
+  <text x="800" y="512" text-anchor="middle" class="body">接收唯一 ChatModel</text>
+  <text x="800" y="548" text-anchor="middle" class="tag">Spring AI</text>
+
+  <rect x="1055" y="430" width="390" height="170" rx="18" class="green"/>
+  <text x="1250" y="474" text-anchor="middle" class="head">ChatClient.Builder</text>
+  <text x="1250" y="512" text-anchor="middle" class="body">应用按需构建 ChatClient</text>
+  <text x="1250" y="548" text-anchor="middle" class="tag">prototype scope</text>
+
+  <path d="M1355 315 V365 H350 V420" class="arrow"/>
+  <path d="M545 515 H600" class="arrow"/><path d="M990 515 H1045" class="arrow"/>
+  <rect x="235" y="665" width="1130" height="54" rx="12" fill="#e2e8f0"/>
+  <text x="800" y="699" text-anchor="middle" class="body">应用自定义同类型 Bean 时，ConditionalOnMissingBean 触发回退，自动配置不会强行覆盖</text>
+</svg>
