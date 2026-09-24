@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="760" viewBox="0 0 1600 760">
+  <rect width="1600" height="760" fill="#f8fafc"/>
+  <style>
+    .title{font:700 34px 'Microsoft YaHei','Noto Sans SC',sans-serif;fill:#0f172a}.sub{font:400 18px 'Microsoft YaHei','Noto Sans SC',sans-serif;fill:#64748b}.h{font:700 21px 'Microsoft YaHei','Noto Sans SC',sans-serif;fill:#0f172a}.b{font:400 17px 'Microsoft YaHei','Noto Sans SC',sans-serif;fill:#475569}.t{font:600 15px 'Microsoft YaHei','Noto Sans SC',sans-serif;fill:#1d4ed8}.box{fill:#fff;stroke:#cbd5e1;stroke-width:2}.blue{fill:#eff6ff;stroke:#60a5fa;stroke-width:2.5}.green{fill:#ecfdf5;stroke:#34d399;stroke-width:2.5}.arr{stroke:#64748b;stroke-width:3;fill:none;marker-end:url(#a)}
+  </style>
+  <defs><marker id="a" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0 0L0 6L9 3Z" fill="#64748b"/></marker></defs>
+  <text x="800" y="60" text-anchor="middle" class="title">DashScopeChatModel 的组装过程</text>
+  <text x="800" y="96" text-anchor="middle" class="sub">连接配置与模型参数分离，最终由自动配置 Builder 汇合</text>
+  <rect x="75" y="160" width="320" height="160" rx="18" class="blue"/>
+  <text x="235" y="205" text-anchor="middle" class="h">ConnectionProperties</text><text x="235" y="244" text-anchor="middle" class="b">API Key · Base URL</text><text x="235" y="280" text-anchor="middle" class="t">连接级配置</text>
+  <rect x="75" y="425" width="320" height="160" rx="18" class="blue"/>
+  <text x="235" y="470" text-anchor="middle" class="h">ChatProperties</text><text x="235" y="509" text-anchor="middle" class="b">model · temperature</text><text x="235" y="545" text-anchor="middle" class="t">请求默认参数</text>
+  <rect x="500" y="160" width="350" height="160" rx="18" class="box"/>
+  <text x="675" y="205" text-anchor="middle" class="h">DashScopeApi</text><text x="675" y="244" text-anchor="middle" class="b">认证 · HTTP Client · 路径</text><text x="675" y="280" text-anchor="middle" class="t">Provider Client</text>
+  <rect x="500" y="425" width="350" height="160" rx="18" class="box"/>
+  <text x="675" y="470" text-anchor="middle" class="h">DashScopeChatOptions</text><text x="675" y="509" text-anchor="middle" class="b">模型调用的默认 Options</text><text x="675" y="545" text-anchor="middle" class="t">可被请求级参数覆盖</text>
+  <rect x="955" y="255" width="430" height="230" rx="22" class="green"/>
+  <text x="1170" y="305" text-anchor="middle" class="h">DashScopeChatModel.Builder</text><text x="1170" y="350" text-anchor="middle" class="b">DashScopeApi + Options</text><text x="1170" y="388" text-anchor="middle" class="b">Retry + Tool Calling + Observation</text><text x="1170" y="436" text-anchor="middle" class="t">build() → ChatModel Bean</text>
+  <path d="M395 240H490" class="arr"/><path d="M395 505H490" class="arr"/><path d="M850 240H910V330H945" class="arr"/><path d="M850 505H910V410H945" class="arr"/>
+  <rect x="260" y="650" width="1080" height="55" rx="12" fill="#e2e8f0"/><text x="800" y="685" text-anchor="middle" class="b">自动配置提供默认 Bean；应用自定义同类型 Bean 时，ConditionalOnMissingBean 让默认创建逻辑回退</text>
+</svg>
